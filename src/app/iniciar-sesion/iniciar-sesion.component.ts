@@ -22,11 +22,11 @@ export class IniciarSesionComponent implements OnInit {
   }
   iniciar_sesion() {
   	this.servicioUsuarios.iniciarSesion(this.formulario).subscribe(respuesta=>{
-      localStorage.setItem('sesionToken',respuesta.jwt);
+      localStorage.setItem('sessionToken',respuesta.jwt);
       this.router.navigate(['/articulos']);
-      alert("inicio de sesion exitosa")
+      alert("inicio de sesion exitosa");
   		},error=>{
-  			alert("fallo el inicio de sesion, verifica la consola")
+  			alert("fallo el inicio de sesion, verifica la consola");
            console.log(error);
   		});
   }

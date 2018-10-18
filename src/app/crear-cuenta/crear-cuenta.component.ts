@@ -17,26 +17,25 @@ export class CrearCuentaComponent implements OnInit {
   	name:"",
   	email:"",
   	password:"",
-  	password_confimation:""
+  	password_confirmation:""
   } }}
 
   ngOnInit() {
   }
   CrearCuenta(){
   	this.servicioUsuarios.crearCuenta(this.formulario).subscribe(respuesta=>{
-        let autenticacion={auth:{email:formulario.user.email, password:formulario.user.password}
+        let autenticacion={auth:{email: this.formulario.user.email, password: this.formulario.user.password}
     };
 
   	this.servicioUsuarios.iniciarSesion(autenticacion).subscribe(respuestaAuth=>{
-  		localStorage.setItem("sesionToken",respuesta.jwt);
+  		localStorage.setItem("sessionToken",respuestaAuth.jwt);
   		this.router.navigate(['/articulos']);
-  		alert('Usuario creado, Bienvenido');
-  	})
+  		alert("Usuario creado, Bienvenido");
   	},errorAuth=>{
        alert("Fallo la autenticacion");
   	});
-  	error=>{
+  	},error=>{
   		alert("No se ha podido crear el usuario, revisa la consola");
-  	}
+  	})
   }
 }

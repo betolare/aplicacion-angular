@@ -22,7 +22,7 @@ export class UsuariosService {
            }
 
          crearCuenta(usuario:any):Observable<any>{
-         	return this.http.post<any>(this.url='/user',usuario,this.encabezados);
+         	return this.http.post<any>(this.url='/users',usuario,this.encabezados);
          }
 }
 

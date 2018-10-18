@@ -23,7 +23,9 @@ const rutas:Routes=[
 {path: 'articulos', component: ArticulosComponent},
 {path: 'iniciar-sesion', component: IniciarSesionComponent},
 {path: 'crear_cuenta', component: CrearCuentaComponent},
-{path:'**', redirectTo: '/', pathMatch: 'full'}
+{path: 'articulo/:id', component: MostrarArticuloComponent},
+{path: 'crear_articulo', component: CrearArticuloComponent},
+{path: '**', redirectTo: '/', pathMatch: 'full'}
 ];
 @NgModule({
   declarations: [
